@@ -14,25 +14,35 @@
         // update buttons
         function updateButtons( key, keyCol, choise ) {
             // output( "key: " + key + "\nkeyCol: " + keyCol + "\nchoise: " + choise );                    // turn on to test output
-            ( choise !== "flavour" ) ? resetButtons() : function(){} ;
-            keyCol.forEach( coll => { 
-                document.getElementById( coll ).classList.add( "out_of_order" ); 
-                document.getElementById( coll ).removeEventListener( "click", function() {
-                    actOnClick( key, "drink" );
-                } );
+            ( choise !== "flavour" ) ? resetButtons() : function(){} ;                                  // reset only for flavours
+            keyCol.forEach( coll => {                                                                   // for each in collisions list
+                document.getElementById( coll ).classList.add( "out_of_order" );                        // add class if in array
             } );
-            document.getElementById( key ).classList.remove( "out_of_order" );
+            document.getElementById( key ).classList.remove( "out_of_order" );                          // remove class from clicked item
         }
         // update text
         function updateText( key, choise ) {
             // output( "key: " + key + "\nchoise: " + choise );                                            // turn on to test output
             if ( choise === "flavour" ) {
                 // output( "name: " + flavour[ key ].name );                                               // turn on to test output
-                gui.display.flavour.innerHTML += "mit " + flavour[ key ].name + "<br />";
+                output( stack.includes( key ) );
+                if ( !stack.includes( key ) ) {
+                    stack.push( key );
+                    gui.display.flavour.innerHTML += "<span class=\"" + key + "\">mit " + flavour[ key ].name + "<br /></span>";               // text update for flavours
+                } else {
+                    for( var i = 0; i < stack.length; i++){ 
+                        if ( stack[ i]  === key ) { 
+                            arr.splice( i, 1 ); 
+                            i--; 
+                        }
+                    }
+                }
+                output( "stack: " + stack );
+                output( stack.includes( key ) );
             } else {
                 // output( "name: " + drink[ key ].name );                                                 // turn on to test output
-                resetTxt();
-                gui.display.drink.innerHTML = drink[ key ].name + "<br />";
+                resetTxt();                                                                             // reset text before...
+                gui.display.drink.innerHTML = drink[ key ].name + "<br />";                             // ...setting teh new text for rinks
             }
         }
 
@@ -40,27 +50,33 @@
         // reset buttons
             function resetButtons() {
                 Object.entries( gui.buttons.drink ).forEach( ( [ key, value ] ) => { 
-                    // output( "1: key: " + key + "\nvalue: " + value );                                       // turn on to test output
-                    document.getElementById( key ).classList.remove("out_of_order"); 
+                    // output( "1: key: " + key + "\nvalue: " + value );                                   // turn on to test output
+                    document.getElementById( key ).classList.remove("out_of_order");                    // reset buttons for all drinks
                 });            
                 Object.entries( gui.buttons.flavour ).forEach( ( [ key, value ] ) => { 
-                    // output( "2: key: " + key + "\nvalue: " + value );                                       // turn on to test output
-                    document.getElementById( key ).classList.remove("out_of_order"); 
+                    // output( "2: key: " + key + "\nvalue: " + value );                                   // turn on to test output
+                    document.getElementById( key ).classList.remove("out_of_order");                    // reset buttons for all flavoura
                 });            
             }
         // reset text values
-            function resetTxt( txt ) {
+            // output( resetTxt( "test" ) );                                                                // turn on to test output
+            function resetTxt( txt ) {                                                                  // reset text based on cases
                 switch ( txt ) {
-                    case "drink":
+                    case "drink":                                                                       // default text for drinks
                         gui.display.drink.innerHTML = "";
                         break;
-                    case "flavour":
+                    case "flavour":                                                                     // default text for flavour
                         gui.display.flavour.innerHTML = "";
                         break;
-                    case "output":
+                    case "output":                                                                      // default text for output
                         gui.display.output.innerHTML = "Dein Getränk: ";
                         break;
-                    default:
+                    case "test":                                                                        // default text only for test output
+                        gui.display.output.innerHTML = "Dein Test: ";
+                        gui.display.drink.innerHTML = "Es hat";
+                        gui.display.flavour.innerHTML = "funktioniert";
+                        break;
+                    default:                                                                            // default text if no case is choosen
                         gui.display.output.innerHTML = "Dein Getränk: ";
                         gui.display.drink.innerHTML = "";
                         gui.display.flavour.innerHTML = "";
@@ -68,5 +84,6 @@
                 }
             }
 
-    // console output
+    // console output                                                                                   // test the output
+        // output( "test" );                                                                              // turn on to test output
         function output( outputStr ) { console.log( outputStr ); }

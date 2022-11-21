@@ -1,6 +1,8 @@
 /*********************************************************/
 /*******            data and objects 01            *******/
 /*********************************************************/
+    // global stack array
+        let stack = [];
     // collision vars
         const colDrink = [ "tea", "milk", "coffee", "soup" ];
         const colFlav = [ "sugar", "vanilla", "choco" ];
@@ -25,7 +27,7 @@
             lemon: { name: "Zitrone", status: false, collision: [ ...colFlav, ...colMilky ] },
 
             chicken: { name: "Hühnerbrühe", status: false, collision: [ ...colSoup, ...colTea, ...colFlav, ...colMilky ] },
-            tomato: { name: "Tomaten Suppe", status: false, collision: [ ...colSoup, ...colTea, ...colFlav, ...colMilky ] },
+            tomato: { name: "Tomaten Suppe", status: false, collision: [ ...colSoup, ...colTea, ...colFlav, ...colMilky ] }
         }
     // drink choise vars
         const drink = {
