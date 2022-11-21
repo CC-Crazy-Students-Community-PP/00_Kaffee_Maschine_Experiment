@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Getränke Automat</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+</head>
+
+<body>
+    <button name="reload" value="Refresh Page" onClick="window.location.reload()">reload</button>
+    <h1>Getränke Automat</h1>
+    
+    <!-- mainWrapper -->
+    <div id="mainWrapper">
+        <!-- display -->
+        <div id="display">
+            <!--outputTxt-->
+            <p id="output">Dein Getränk: </p>
+            <p id="drink"></p>
+            <p id="flavour"></p>
+        </div>
+        <!-- buttons -->
+        <p id="auswahl1">
+            <div class="button" id="coffee"></div>
+            <div class="button" id="milk"></div>
+            <div class="button" id="tea"></div>
+            <div class="button" id="soup"></div>
+        </p>
+        <p id="auswahl2">
+            <div class="button" id="sugar"></div>
+            <div class="button" id="milky"></div>
+            <div class="button" id="vanilla"></div>
+            <div class="button" id="choco"></div>
+        </p>
+        <p id="auswahl3">
+            <div class="button" id="earl"></div>
+            <div class="button" id="green"></div>
+            <div class="button" id="black"></div>
+            <div class="button" id="lemon"></div>
+        </p>
+        <p id="auswahl4">
+            <div class="button" id="chicken"></div>
+            <div class="button" id="tomato"></div>
+        </p>
+    </div>
+    
+    <!--Text-->
+    <p id="outputTxt">Dein Getränk: </p>
+    <!-- Eingabe -->
+    <form>
+        <label>Wie alt sind Sie? :</label>
+        <input type="text" name="eingabe" value="">
+    </form>
+    
+    
+    <!-- ext. Script-Dateien -->
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/events.js"></script>
+</html>

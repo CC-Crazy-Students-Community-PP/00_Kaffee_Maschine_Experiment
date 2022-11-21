@@ -1,0 +1,80 @@
+/* STYLES */
+* { 
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+    padding: 0px;
+}
+body { 
+    width: 90%;
+}
+#mainWrapper { 
+    width: 439px;
+    height: 700px;
+    background: url("../img/coffee_machine.png") center center no-repeat;
+    padding-top: 50px;
+
+}
+p {
+    padding: 3px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* DISPLAY */
+#display { 
+    display: block;
+    width: 180px;
+    height: 93px;
+    background: url("../img/display.png") center center no-repeat;
+    background-size: 180px 93px;
+}
+/* BUTTONS */
+.button { 
+    display: inline-block;
+    width: 51px;
+    height: 42px;
+    cursor: pointer;
+}
+.out_of_order {
+    cursor: no-drop;
+    opacity: 0.1;
+}
+#coffee.out_of_order, #milk.out_of_order, #tea.out_of_order, #soup.out_of_order{
+    cursor: pointer;
+    opacity: 0.3;
+}
+
+#auswahl1 { margin-top: 30px; }
+#auswahl2 { margin-top: 30px; }
+#auswahl3, #auswahl4 { margin-top: 0px; }
+
+#coffee { background: url("../img/coffee_button_1.png") center center no-repeat; }
+#milk { background: url("../img/milk_button_1.png") center center no-repeat; }
+#tea { background: url("../img/tea_button_1.png") center center no-repeat; }
+#soup { background: url("../img/soup_button_1.png") center center no-repeat; }
+#sugar { background: url("../img/mit_sugar_1.png") center center no-repeat; }
+#milky { background: url("../img/mit_milk_1.png") center center no-repeat; }
+#lemon { background: url("../img/mit_lemon_1.png") center center no-repeat; }
+#vanilla { background: url("../img/mit_vanilla_1.png") center center no-repeat; }
+#choco { background: url("../img/mit_choco_1.png") center center no-repeat; }
+#earl { background: url("../img/mit_earl_1.png") center center no-repeat; }
+#green { background: url("../img/mit_green_1.png") center center no-repeat; }
+#black { background: url("../img/mit_black_1.png") center center no-repeat; }
+#chicken { background: url("../img/mit_chicken_1.png") center center no-repeat; }
+#tomato { background: url("../img/mit_tomato_1.png") center center no-repeat; }
+
+#coffee:hover { background: url("../img/coffee_button_2.png") center center no-repeat; }
+#milk:hover { background: url("../img/milk_button_2.png") center center no-repeat; }
+#tea:hover { background: url("../img/tea_button_2.png") center center no-repeat; }
+#soup:hover { background: url("../img/soup_button_2.png") center center no-repeat; }
+#sugar:hover { background: url("../img/mit_sugar_2.png") center center no-repeat; }
+#milky:hover { background: url("../img/mit_milk_2.png") center center no-repeat; }
+#lemon:hover { background: url("../img/mit_lemon_2.png") center center no-repeat; }
+#vanilla:hover { background: url("../img/mit_vanilla_2.png") center center no-repeat; }
+#choco:hover { background: url("../img/mit_choco_2.png") center center no-repeat; }
+#earl:hover { background: url("../img/mit_earl_2.png") center center no-repeat; }
+#green:hover { background: url("../img/mit_green_2.png") center center no-repeat; }
+#black:hover { background: url("../img/mit_black_2.png") center center no-repeat; }
+#chicken:hover { background: url("../img/mit_chicken_2.png") center center no-repeat; }
+#tomato:hover { background: url("../img/mit_tomato_2.png") center center no-repeat; }
