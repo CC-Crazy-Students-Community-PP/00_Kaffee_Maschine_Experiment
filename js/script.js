@@ -25,20 +25,17 @@
             // output( "key: " + key + "\nchoise: " + choise );                                            // turn on to test output
             if ( choise === "flavour" ) {
                 // output( "name: " + flavour[ key ].name );                                               // turn on to test output
-                output( stack.includes( key ) );
                 if ( !stack.includes( key ) ) {
                     stack.push( key );
                     gui.display.flavour.innerHTML += "<span class=\"" + key + "\">mit " + flavour[ key ].name + "<br /></span>";               // text update for flavours
                 } else {
                     for( var i = 0; i < stack.length; i++){ 
                         if ( stack[ i]  === key ) { 
-                            arr.splice( i, 1 ); 
-                            i--; 
+                            stack.splice( i, 1 );
+                            i--;
                         }
                     }
                 }
-                output( "stack: " + stack );
-                output( stack.includes( key ) );
             } else {
                 // output( "name: " + drink[ key ].name );                                                 // turn on to test output
                 resetTxt();                                                                             // reset text before...
