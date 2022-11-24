@@ -5,17 +5,18 @@
         let stack = [];
     // collision vars
         const colDrink = [ "tea", "milk", "coffee", "soup" ];
-        const colFlav = [ "sugar", "vanilla", "choco" ];
+        const colFlav = [ "vanilla", "choco" ];
         const colTea = [ "earl", "green", "black" ];
         const colSoup = [ "chicken", "tomato" ];
         const colMilky = [ "milky" ];
         const colLemon = [ "lemon" ];
+        const colSugar = [ "sugar" ];
     // drink flavour vars
         const flavour = {
             sugar: { 
                 name: "Zucker",                                                     // Name des Getränks oder Geschmacks
                 status: false,                                                      // Status des Buttons ob gedrückt oder nicht
-                collision: [ ...colFlav ]                                           // Kollision, welche Buttons nicht anwählbar sein sollen
+                collision: [ ...colSoup ]                                           // Kollision, welche Buttons nicht anwählbar sein sollen
             },
             milky: { name: "Milch", status: false, collision: [ ...colSoup, ...colLemon ] },
             vanilla: { name: "Vanille", status: false, collision: [ ...colFlav, ...colSoup ] },
@@ -36,9 +37,9 @@
                 collision: [ ...colDrink, ...colFlav, ...colSoup ],                 // Kollision, welche Buttons nicht anwählbar sein sollen
                 status: false                                                       // Status des Buttons ob gedrückt oder nicht
             },
-            milk : { name: "Milch", collision: [ ...colDrink, ...colTea, ...colSoup, "lemon", "milky","sugar" ], status: false },
-            coffee : { name: "Kaffee", collision: [ ...colDrink, ...colTea, ...colSoup, "lemon" ], status: false },
-            soup : { name: "Suppe", collision: [ ...colDrink, ...colTea, ...colFlav, "lemon", "milky" ], status: false }
+            milk : { name: "Milch", collision: [ ...colDrink, ...colTea, ...colSoup, ...colLemon, ...colMilky, ...colSugar ], status: false },
+            coffee : { name: "Kaffee", collision: [ ...colDrink, ...colTea, ...colSoup, ...colLemon ], status: false },
+            soup : { name: "Suppe", collision: [ ...colDrink, ...colTea, ...colFlav, ...colLemon, ...colMilky, ...colSugar ], status: false }
         }
     // get all buttons and output
         let gui =   {
